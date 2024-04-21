@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Timetable</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000000; /* Dark background */
+      color: #fff;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #000000;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    h2,
+    h3 {
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.353); /* Green glowing effect */
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      color: #fff;
+    }
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #666;
+      color: #fff; /* Text color */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.353); /* Green glowing effect */
+    }
+    th {
+      background-color: #444;
+    }
+    p {
+      margin-bottom: 10px;
+      color: #fff; /* Text color */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.353); /* Green glowing effect */
+    }
+    ul {
+      margin-top: 0;
+      padding-left: 20px;
+      color: #fff; /* Text color */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.353); /* Green glowing effect */
+    }
+    li {
+      list-style-type: disc;
+    }
+
+    select{
+        background-color: #444;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #666;
+    }
+    label{
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.353);
+    }
+    @media screen and (max-width: 600px) {
+      /* Responsive styles for smaller screens */
+      .container {
+        padding: 10px;
+        margin: 0;
+        height: 95svh;
+      }
+      table,
+      th,
+      td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Study Timetable</h2>
+
+    <label for="week">Select Week:</label>
+    <select id="week" onchange="showWeek()">
+      <option value="week1">Week 1 (April 21 - April 28)</option>
+      <option value="week2">Week 2 (April 29 - May 5)</option>
+      <option value="week3">Week 3 (May 6 - May 12)</option>
+      <option value="week4">Week 4 (May 13 - May 19)</option>
+    </select>
+
+    <div id="week1" class="week">
+      <h3>Week 1 (April 21 - April 28)</h3>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Subject</th>
+          <th>Topics</th>
+        </tr>
+        <tr>
+          <td rowspan="6">Sunday, April 21st</td>
+          <td>9:00 AM - 11:00 AM</td>
+          <td>Chemistry</td>
+          <td>Module 1 - Electrochemistry and Corrosion</td>
+        </tr>
+        <tr>
+          <td>11:00 AM - 12:00 PM</td>
+          <td>Break</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>12:00 PM - 2:00 PM</td>
+          <td>Basic Civil Engineering</td>
+          <td>Module 1</td>
+        </tr>
+        <tr>
+          <td>2:00 PM - 3:00 PM</td>
+          <td>Lunch Break</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3:00 PM - 5:00 PM</td>
+          <td>C Programming</td>
+          <td>Module 1 - Basics of Computer Hardware and Software</td>
+        </tr>
+        <tr>
+          <td>5:00 PM - 6:00 PM</td>
+          <td>Break/Relaxation</td>
+          <td></td>
+        </tr>
+        <!-- Repeat rows for each day -->
+      </table>
+    </div>
+
+    <div id="week2" class="week" style="display: none;">
+      <h3>Week 2 (April 29 - May 5)</h3>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Subject</th>
+          <th>Topics</th>
+        </tr>
+        <tr>
+          <td>Monday, April 29th</td>
+          <td>6:30 PM - 8:30 PM</td>
+          <td>Basic Mechanical Engineering</td>
+          <td>Continue Module 4</td>
+        </tr>
+        <tr>
+          <td>Tuesday, April 30th</td>
+          <td>6:30 PM - 8:30 PM</td>
+          <td>Basic Mechanical Engineering</td>
+          <td>Module 5 - Refrigeration, Hydraulic Machines, Power Transmission</td>
+        </tr>
+        <!-- Include content for other days -->
+      </table>
+    </div>
+
+    <div id="week3" class="week" style="display: none;">
+      <h3>Week 3 (May 6 - May 12)</h3>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Subject</th>
+          <th>Topics</th>
+        </tr>
+        <tr>
+          <td>Monday, May 6th</td>
+          <td>6:30 PM - 8:30 PM</td>
+          <td>Revise Chemistry</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Tuesday, May 7th</td>
+          <td>6:30 PM - 8:30 PM</td>
+          <td>Revise C Programming</td>
+          <td></td>
+        </tr>
+        <!-- Include content for other days -->
+      </table>
+    </div>
+
+    <div id="week4" class="week" style="display: none;">
+      <h3>Week 4 (May 13 - May 19)</h3>
+      <p>
+        This week will be dedicated to final revision and practice for all
+        subjects before your final semester exams.
+      </p>
+      <p>
+        Follow a similar schedule as the previous week, with sessions
+        dedicated to revising and practicing each subject. Allocate more time
+        for subjects or topics that require additional attention.
+      </p>
+      <p>During this final week, focus on:</p>
+      <ul>
+        <li>Reviewing key concepts and solving practice problems</li>
+        <li>Identifying and addressing any remaining doubts or weaknesses</li>
+        <li>Practicing previous years' question papers or sample papers</li>
+        <li>
+          Seeking help from professors or peers for specific topics, if needed
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function showWeek() {
+      var selectedWeek = document.getElementById("week").value;
+      var weeks = document.getElementsByClassName("week");
+
+      for (var i = 0; i < weeks.length; i++) {
+        weeks[i].style.display = "none";
+      }
+
+      document.getElementById(selectedWeek).style.display = "block";
+    }
+  </script>
+</body>
+</html>
